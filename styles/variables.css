@@ -1,0 +1,12 @@
+:root {
+  --display: block;
+  --accent-color: #ff0070;
+  --title-color: #db00ff;
+  --text-color: #f1b2ce;
+  --subtitle-color: #ff0070;
+  --decoration-color: #ff0070;
+  --background-color: #000028;
+  --header-text-color:#000028;
+  --background-image: url(../images/cover-image-dark.png);
+  --hover-color: 1px solid rgba(255, 0, 112, 0.4);
+}
