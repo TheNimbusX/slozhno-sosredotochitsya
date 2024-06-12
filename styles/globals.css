@@ -47,15 +47,3 @@ a {
 .bold-text {
   font-weight: 700;
 }
-
-@media (width <= 375px) {
-  .decoration::before {
-    right: 10px;
-    top: 10px;
-  }
-
-  .decoration::after {
-    bottom: 10px;
-    left: 10px;
-  }
-}
