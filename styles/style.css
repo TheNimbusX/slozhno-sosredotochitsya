@@ -2,6 +2,7 @@
 
 .page {
   background-image: var(--background-image);
+  background-color: var(--background-color);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center top;
@@ -12,6 +13,7 @@
   padding: 0 20px;
   height: 100vh;
   position: relative;
+  min-height: 668px;
 }
 
 .header__theme-menu {
@@ -35,10 +37,12 @@
   background-color: transparent;
   text-transform: lowercase;
   border: none;
+  cursor: pointer;
 }
 
 .header__theme-menu-button_active {
   outline: 1px solid var(--decoration-color);
+  pointer-events: none;
 }
 
 .header__decoration {
@@ -49,19 +53,49 @@
   right: 48px;
   color: var(--accent-color);
   line-height: 25px;
+  text-transform: uppercase;
 }
 
-.header__theme-menu::before {
+.decoration::before {
+  content: "";
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background-color: transparent;
+  border-top: 1px solid var(--decoration-color);
+  border-right: 1px solid var(--decoration-color);
+  height: 25px;
+  width: 25px;
+}
+
+.decoration::after {
+  content: "";
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  background-color: transparent;
+  border-bottom: 1px solid var(--decoration-color);
+  border-left: 1px solid var(--decoration-color);
+  height: 25px;
+  width: 25px;
+}
+
+.header__decoration,
+.header__decoration::before {
+  display: var(--display);
+}
+
+.header__decoration::before {
   display: var(--display);
   content: "";
   position: absolute;
   top: 28px;
-  right: 29px;
+  right: -19px;
   background-color: var(--accent-color);
   height: 9px;
   width: 9px;
   border-radius: 50%;
-  box-shadow: 0px 0px 4px 2px rgba(255, 0, 112, 1);
+  box-shadow: 0px 0px 4px 2px var(--accent-color);
 }
 
 .cover__wrapper {
@@ -77,6 +111,14 @@
   font-weight: 700;
   color: var(--title-color);
   text-shadow: 4px 4px 0 var(--accent-color);
+}
+
+.title-decor {
+  background-color: var(--accent-color);
+  font-family: "IBM Plex mono", "monospace", sans-serif;
+  color: var(--header-text-color);
+  line-height: 23.4px;
+  text-align: left;
 }
 
 .cover__descriprion {
@@ -189,13 +231,14 @@
   padding: 282px 20px;
   position: relative;
   text-align: center;
+  min-height: 668px;
 }
 
 .footer__title {
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   font-weight: 700;
   color: var(--title-color);
-  text-shadow: 4px 4px 0 var(--accent-color);
+  text-shadow: 2px 2px 0 var(--accent-color);
 }
 
 @media (width <= 768px) {
@@ -224,12 +267,12 @@
   }
 
   .header__theme-menu {
-    padding-top: 192px;
+    padding-top: 187px;
     justify-content: flex-end;
   }
 
   .cover__wrapper {
-    padding: 140px 0 183px;
+    padding: 148px 0 183px;
     gap: 133px;
   }
 
@@ -242,20 +285,12 @@
   }
 
   .main {
-    gap: 60px;
+    gap: 80px;
   }
 
   .main__section {
     gap: 17px;
     column-gap: 23px;
-  }
-
-  .main__section-horizontal {
-    margin-bottom: 17px;
-  }
-
-  .main__section-gallery {
-    margin-top: 20px;
   }
 
   .section__items-list-horizontal {
@@ -273,7 +308,6 @@
 
   .footer__title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-    text-shadow: 2px 2px 0px var(--accent-color);
   }
 }
 
@@ -294,7 +328,7 @@
     right: 38px;
   }
 
-  .header__theme-menu::before {
+  .header__decoration::before {
     right: 19px;
   }
 
@@ -336,7 +370,6 @@
   .footer__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   }
-
 }
 
 @media (width <= 375px) {
@@ -354,27 +387,27 @@
 
   .header__decoration {
     padding-top: 10px;
-    top:0px;
+    top: 0px;
     right: 38px;
   }
 
-  .header__theme-menu::before {
+  .header__decoration::before {
     top: 19px;
-    right: 19px;
+    right: -19px;
   }
 
   .decoration::before {
     right: 10px;
     top: 10px;
-}
+  }
 
-.decoration::after {
-  bottom: 10px;
-  left: 10px;
-}
+  .decoration::after {
+    bottom: 10px;
+    left: 10px;
+  }
 
   .header__theme-menu {
-    padding-top: 75px;
+    padding-top: 70px;
     justify-content: flex-end;
   }
 
@@ -412,13 +445,13 @@
   .main__section-gallery {
     padding: 0 10px;
     margin-top: -5px;
-    gap:10px;
+    gap: 10px;
   }
 
   .main__section-gallery-images {
     display: flex;
     flex-direction: column;
-    gap:10px;
+    gap: 10px;
   }
 
   .section__item-text {
@@ -453,7 +486,7 @@
 }
 
 .text__link:focus-visible {
-  border: 1px solid var(--decoration-color);
+  border: 1px solid var(--text-color);
 }
 
 .header__theme-menu-button:hover {
