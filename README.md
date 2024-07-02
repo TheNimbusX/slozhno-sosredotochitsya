@@ -1,1 +1,10 @@
-https://github.com/TheNimbusX/slozhno-sosredotochitsya
+Вёрстка макета "Сложно сосредоточиться" по курсу Яндекс Практикума "Фронтенд-разработчик"
+Комплектация репозитория:
+
+автотесты (test.yml);
+шрифты (fonts);
+js-скрипты (scripts);
+стили (styles);
+файл пропуска файлов при коммитах (.gitignore);
+readme-файл;
+html-страница сайта (index.html).
